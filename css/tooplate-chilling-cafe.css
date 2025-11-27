@@ -1,0 +1,692 @@
+/* 
+Tooplate 2118 Chilling Cafe
+
+https://www.tooplate.com/view/2118-chilling-cafe
+
+
+    Background color:       #3a4a58
+    Title color:            #996633
+    Text color:             #666666
+    Text Dark color:        #333333
+    Table Heading color:    #C4CDD6
+    Table Alternate color:  #e5e8ed  */
+
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #000000;
+  color: #8c8c8c;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  padding: 15px;
+  margin: 0;
+}
+.tm-nav{
+  text-align:center;
+  margin-bottom:20px;
+  position:sticky;
+  background:70px solid transparent;
+  border-radius:10px;
+  padding:20px;
+  backdrop-filter: blur(10px);
+  position:relative;
+
+
+}
+
+.tm-nav-container{
+  display:flex;
+  justify-content:center;
+  flex-direction:row;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+  
+  
+}
+
+.tm-nav-list li {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  
+}
+
+
+
+.tm-nav-list a {
+  color:aliceblue;
+  text-decoration:none;
+  padding:10px 15px;
+  font-size:0.8rem;
+  display:block;
+}
+.tm-nav-list a:hover {
+  background-color:#996633;
+  color:#fff;
+  border-radius:5px;
+  transition:0.3s;
+  border-radius :1000%;
+}
+
+
+.tm-container {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tm-main-content {
+   background-color: #000000;
+   margin-top:20px;
+
+}
+
+.tm-intro-img {
+  background-image: url(../img/chilling-cafe-01.jpg);
+  background-position: center;
+  background-size: cover;
+  min-height: 425px;
+  position:relative;
+  z-index:-2;
+  opacity:0.5;
+  animation: tm-intro-img-animation linear;
+  animation-timeline:view();
+}
+
+  
+
+
+
+
+/*   
+  font-weight:300;
+  
+  animation: fade-out linear;
+  transform-origin:top;
+  animation-timeline:view();
+  animation-range:exit -200px;
+  animation-range:exit; */
+
+@keyframes fadeOut {
+  to{opacity:0;}
+}
+ @keyframes tm-intro-img-animation {
+  30%{opacity:1;}
+  85%,100%{opacity:0;scale:4;} 
+
+}
+.tm-intro-img::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  background:rgba(0,0,0,0);
+  box-shadow:inset 100px 50px 20px #000000, inset -150px -100px 250px #000000;
+
+}
+
+
+
+
+.tm-text-white { color: white; }
+
+.tm-page-header-container {
+  text-align:center;
+}
+
+.tm-page-header {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  font-size: 2.1rem;
+  font-weight: 400;
+}
+
+.tm-page-icon {
+  display: inline-block;
+  vertical-align: baseline;
+  padding: 15px;
+}
+
+.tm-section-header {
+  color: #996633;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.tm-section-header,
+.tm-page-header {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.6s ease-out;
+  will-change: transform, opacity;
+}
+
+.tm-section-header.header-visible,
+.tm-page-header.header-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modern Table Styles */
+table {
+  width: 100%;
+  border-spacing: 0;
+   border-radius: 12px; /*trims the edge of the table */
+  overflow: hidden;/* makes sure the table doesn't fallout of */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 25px 0;
+  background: #1a1a1a;
+}
+
+th {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 18px 15px;
+  background: #996633;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+td {
+  text-align: center;
+  padding: 16px 15px;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  transition: all 0.3s ease-in-out;
+}
+
+tr:nth-child(odd) { 
+  background-color: #1f1f1f; 
+}
+
+tr:nth-child(even) { 
+  background-color: #000000;
+}
+
+tr:hover {
+  background-color: #996633;
+  transform: scale(1.02);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tm-tr-header {
+  background-color: #996633;
+  height: 60px;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Add responsive styles */
+@media (max-width: 600px) {
+  .tm-responsive-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -15px;
+    padding: 0 15px;
+  }
+
+  table {
+    min-width: 500px;
+  }
+
+  th, td {
+    white-space: nowrap;
+    padding: 12px 10px;
+  }
+}
+
+/* Optional: Add animation for new rows */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tm-s{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+/* 
+  &.m{
+    position:absolute;
+    height:50px;
+    background-color:#000;
+    width:10%;
+    bottom:0;
+    right:0;
+    border-radius:24px;
+    display:grid;
+    place-items:center;
+    transition:0.5s;
+
+    &:before,&:after  {
+      position:absolute;
+      width:24px;
+      content:'';
+      aspect-ratio: 1;
+      background:radial-gradient(circle 24px at top left,
+                       #000000 98%, #ffffff);
+      
+    }
+    &:before{
+      top:26px;
+      left:-34px;
+      width:34px;
+      bottom:0;
+
+
+        }
+    &:after{
+      top:-36px;
+      right:-10px;
+      width:34px;
+      
+    }
+    &:hover{
+  width:64%;
+
+  span{
+    width:100%;
+  }
+    }
+    span{
+      display: grid;
+      color:#fff;
+      place-items:center;
+      overflow:hidden;
+      width:1..5ch;
+      letter-spacing: 2px;
+      font-weight:600;
+
+    } */
+
+  
+}
+.tm-special{
+  gap:2rem;
+  margin-top:20px;
+  border-radius:5px 5px 5px 5px;
+}
+.tm-section-small {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.tm-mb-0 { margin-bottom: 0; }
+img { max-width: 100%; }
+figure { margin: 0; }
+figcaption { text-align: center; }
+
+figcaption span {
+  display: block;
+  color: #333333;
+  font-size: 18px;
+}
+
+.tm-item-name {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color:#84776a;
+}
+.tm-item-price{
+  color:#84776a;
+}
+
+.tm-special-items {
+  display: flex;
+  margin-left: -15px;
+  margin-right: -15px;
+  
+}
+
+.tm-special-item {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+hr {
+  width: 70%;
+  border: 0.5px solid #ccc;
+}
+
+.tm-social-icons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.tm-social-icons i { font-size: 1.2rem; }
+.tm-social-link-container { display: inline-block; }
+
+.tm-social-link {
+  color: #ffbd60;
+  background-color:transparent;
+  
+  border-radius: 2px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.tm-social-link:hover { background-color: #808e9e; }
+
+.tm-contact-link {
+  color: #333333;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a { transition: all 0.3s ease; }
+.tm-contact-link:hover { color: #808e9e; }
+
+.tm-footer-text {
+  font-size: 0.9rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.tm-footer-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.tm-footer-link:hover { color: #c5ced8; }
+
+@media (max-width: 550px) {
+  .tm-special-item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .tm-special-items {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tm-special-item {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .tm-special-items {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+}
+
+@media (max-width: 430px) {
+  .tm-responsive-table { overflow-x: auto; }
+  table { width: auto; }
+  .tm-special-items { flex-direction: column; }
+  .tm-special-item { margin-bottom: 40px; }
+  figcaption p {
+    margin-bottom: 0;
+    line-height: 1;
+  }
+}
+
+/* slide-in animation: hidden until .active is added */
+.slide-in {
+  opacity: 0;
+  transform: translateX(-200%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.slide-in.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* remove the old hard-coded transform so slide-in controls it */
+
+  /* ... no pre-applied transform here - handled by .slide-in ... */
+
+
+.slide-in {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+#scroll-to-top {
+	width: 40px;
+	height: 40px;
+	position: fixed;
+	bottom: 10px;
+	right: 20px;
+	display: none;
+	font-size: 25px;
+	border-radius: 0;
+	transition: .2s;
+	letter-spacing: 1px;
+	text-align: center;
+	line-height: 40px;
+	color:#ffffff;
+	font-weight: 10000;
+	border-radius: 100%;
+}
+#eathen{
+  align-items: center;
+  justify-content:center;
+  text-align: center;
+  margin-left: 50%;
+  color:white;
+}
+/* scroll without javascript */
+.tm-special{
+  scale:.8; opacity:0;
+  animation: fade-in linear forwards;
+  animation-timeline:view();
+  animation-range:entry 200px;
+
+}
+
+@keyframes fade-in{
+
+  to{scale: 1; opacity:1;}
+}
+@keyframes slide-in{
+ from{ tranform:translateX(100%);}
+ to{transform:translateX(-100%);}
+}
+
+/* Infinite horizontal scroll demo (fix: use --scroll-duration) */
+.infinite-scroll-wrap {
+  margin: 28px auto;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 18px 12px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+  box-shadow: 0 6px 30px rgba(0,0,0,0.45);
+}
+
+.infinite-scroll { width: 700%; }
+
+.infinite-track {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  transform: translateX(0);               /* start position */
+  /* use JS-controlled duration; provide a sensible fallback */
+  --scroll-duration: 18s;
+  animation: infinite-scroll var(--scroll-duration) linear infinite;
+  will-change: transform;
+}
+
+/* ensure items keep their size */
+.infinite-track > * { flex: 0 0 auto; }
+
+.infinite-item {
+  min-width: 220px;
+  height: 120px;
+  background: linear-gradient(180deg,#222,#111);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  font-size: 1rem;
+  padding: 10px;
+  text-align: center;
+  overflow: hidden; /* Add this to contain the image */
+}
+
+.infinite-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes image cover the container */
+    object-position: center; /* Centers the image */
+}
+
+/* pause on hover */
+.infinite-scroll-wrap:hover .infinite-track { animation-play-state: paused; }
+
+/* animation uses -50% because track content is duplicated in JS */
+@keyframes infinite-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+@keyframes infinite-scroll-reverse {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+/* ensure reverse wrapper plays track in reverse if preferred via CSS (JS also sets this) */
+.infinite-scroll-wrap.reverse .infinite-track,
+.infinite-track.reverse {
+  animation-direction: reverse;
+}
+
+/* optional visual hint for reverse container (not required) */
+.infinite-scroll-wrap.reverse {
+  box-shadow: 0 6px 30px rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .infinite-track { animation: none; }
+  .infinite-item { transition: none; }
+}
+
+/* responsive tweaks */
+@media (max-width: 720px) {
+  .infinite-item { min-width: 160px; height: 96px; font-size: 0.95rem; }
+}
+
+/* Preloader styles */
+
+.contact-btn {
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  height: 42px;
+  padding: 0 14px;
+  background: var(--accent, #996633);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.12s ease;
+  margin-left: 12px;
+  position:relative;
+  top:0;
+  left:45%;
+  
+  
+}
+.contact-btn:hover{
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+}
+.nav-right{
+  display:flex;
+  align-items:center;
+  text-align:center;
+  
+}
+.carousel{
+  margin:100px auto;
+  width:90%;
+  border:5px;
+  display:flex;
+  overflow-x: auto;
+}
+.carousel::-webkit-scrollbar{
+  display: none;
+}
+.group{
+  display:flex;
+  align-items: center;
+  gap:1em;
+  justify-content: center;
+  animation:spin 10s infinite linear;
+  padding-right:1em;
+}
+.card{
+  flex: 0 0 5em;
+  height:5em;
+  padding: 1em;
+  background: rgb(30, 30, 31);
+  font-size: 3rem;
+  border-radius:100%;
+  text-align: center;
+  align-content:center;
+}
+.card:hover{
+  background-color:#996633;
+  cursor:progress;
+}
+/* .card:hover .carousel .group {animation-play-state: paused;} */
+@keyframes spin{
+  from{
+    translate:0;
+  }
+  to{
+    translate:-100%;
+  }
+}

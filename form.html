@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Saragota Cafe</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet" />
+    <link href="fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="css/tooplate-chilling-cafe.css" rel="stylesheet" />
+    <link href="css/form.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="preloader" style="display:none;"><div class="loader"><img src="" alt="" /></div></div>
+
+    <div class="tm-text-white tm-page-header-container" style="margin-bottom:10px;">
+      <i class="fas fa-mug-hot fa-2x tm-page-icon" style="background-color: #996633; border-radius: 50%;"></i>
+      <h1 class="tm-page-header">Saragota <span style="background-color: #996633; border-radius:10px 200px 10px 200px ;padding:6px 10px;">Cafe</span></h1>
+    </div>
+
+    <div class="tm-container">
+      <section class="tm-section">
+        <h2 class="tm-section-header">Contact Us</h2>
+
+        <div class="form-row">
+          <div class="form-card">
+            <p class="form-lead">Feel free to send us a message — we reply promptly.</p>
+            <form id="contact" action="#" method="post" target="blank" class="site-form">
+              <div class="field-row">
+                <input name="name" type="text" id="name" placeholder="Full Name" required />
+                <input name="email" type="email" id="email" placeholder="Email Address" required />
+              </div>
+              <div class="field-row">
+                <input name="subject" type="text" id="subject" placeholder="Subject" required />
+              </div>
+              <div class="field-row">
+                <textarea name="message" id="message" rows="6" placeholder="Your Message" required></textarea>
+              </div>
+              <div class="field-row actions">
+                <button type="submit" class="btn-primary"onclick= "alert
+                ('sent successfully')";>Send Message </button>
+                <a href= "index.html" class="btn-secondary">Back to Home</a>
+              </div>
+              
+            </form>
+          </div>
+
+          <aside class="contact-side">
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <h4>Phone</h4>
+              <a href="tel:0900800760">090-080-0760</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <h4>Email</h4>
+              <a href="mailto:info@company.com">info@company.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <h4>Location</h4>
+              <address>1020 New Mountain Street<br>Forest Park, FP 11220</address>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p class="tm-text-white tm-footer-text">Copyright &copy; 2020 Saragota Cafe. Design: <a href="" class="tm-footer-link">THE IYI</a></p>
+    </footer>
+
+    <script>
+      // simple reveal for header
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.tm-section-header, .tm-page-header').forEach(function (el) {
+          el.classList.add('header-visible');
+        });
+      });
+      //button
+      alert('hello');
+    </script>
+  </body>
+</html>
