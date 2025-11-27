@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper scissor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body> 
+    
+
+    <script>
+
+/*
+     //an object groups multiple values together
+     const product = {
+        //properties
+        name : "socks",
+        price : 1930
+     };
+     console.log(product);
+     console.log(product.name);
+     console.log(product.price);
+     product.name ="cotton socks";
+     console.log(product)
+
+     product.newProperty =true;
+     console.log(product)
+
+     delete product.newProperty;
+     console.log(product)
+     */
+    const product_1 ={
+        name:"shirt",
+        //objects stores any type of value
+        ['delivver-time']:'i day',
+//inner object
+        rating:{
+            stars: 4.5,
+            count: 47
+        },//function inside an object
+        fun: function function1(){
+            console.log("function iside an object")
+        }
+
+    }
+    console.log(product_1.name);
+
+    //accessing vlue inside object
+    console.log(product_1['name']);
+     // when do we use bracket notation: bracket notatation lets us use properties that normlly do not work with dot notation
+    //    console.log(product_1.delivver-time);
+    console.log(product_1['delivver-time'])//undefined because it is not in the object
+    //accessing value inside the inner object
+    console.log(product_1.rating.count)
+    product_1.fun()
+   
+    </script>
+
+   
+</body>
+</html>  s
