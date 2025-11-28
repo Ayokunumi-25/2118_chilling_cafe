@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title> <fav-icon><i class="fas fa-mug-hot fa-2x tm-page-icon" ></i></fav-icon></title>
+    <title>Saragota</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet" />
     <link href="fontawesome/css/all.min.css" rel="stylesheet" /> <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link href="css/tooplate-chilling-cafe.css" rel="stylesheet" />
@@ -13,12 +13,6 @@
 
   </head>
   <body>
-      <!-- LOADER -->
-      <div id="preloader">
-        <div class="loader">
-          <img src="" alt="" />
-        </div>
-      </div>
     
         <!-- :begin cofee header logo -->
 
@@ -26,8 +20,15 @@
         <i class="fas fa-mug-hot fa-4x tm-page-icon" style="background-color: rgba(0, 0, 0, 0.4); border-radius: 50%; padding:30px;"></i>
         <h1 class="tm-page-header">Saragota <span style="background-color: #996633; border-radius:10px 200px 10px 200px ;padding:10px;">Cafe</span></h1>
       </div>
+      <!-- sidebar -->
+       <button aria-label="Mobiile Navigation" class="mobile_button">
+          <div></div>
+          <div></div>
+          <div></div>
+      </button>
+
       <!-- Added navigation -->
-      <div class="nav-container">
+      <div class="nav-container" id="navContainer">
         <nav class="tm-nav">
           <ul class="tm-nav-list">
             <li><a href="#top">Home</a></li>
@@ -124,7 +125,7 @@
                               <span class="tm-item-price">$25</span>
                             </figcaption>
                           </figure>
-                          <p><h3 class="tm-section tm-section-small"  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, ad quis totam laborum aperiam deserunt iure delectus architecto nobis officiis suscipit, natus recusandae et eveniet temporibus. Optio officiis numquam ipsam exercitationem ullam saepe provident inventore culpa, quisquam eligendi, odit eius fugiat impedit dolorem. Quasi earum maxime officia magni molestiae! Voluptates.</h3></p>
+                          <p><h3 class="tm-section tm-section-small"  >Our signature Soft Deli Cup is a delightful fusion of premium ice cream and freshly brewed espresso, creating the perfect balance between sweet indulgence and bold coffee flavor. Crafted with locally sourced ingredients and topped with hand-whipped cream, this dessert experience is a favorite among our regulars. Each cup is prepared fresh to order, ensuring you enjoy the ultimate refreshment with every spoonful.</h3></p>
                           <figure class="tm-special">
                             <img src="img/chilling-cafe-12.jpg" alt="Image" class="tm-special"/>
                             <figcaption>
@@ -132,7 +133,7 @@
                               <span class="tm-item-price">$30</span>
                             </figcaption>
                           </figure>
-                          <p><h3  class="tm-section tm-section-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, ad quis totam laborum aperiam deserunt iure delectus architecto nobis officiis suscipit, natus recusandae et eveniet temporibus. Optio officiis numquam ipsam exercitationem ullam saepe provident inventore culpa, quisquam eligendi, odit eius fugiat impedit dolorem. Quasi earum maxime officia magni molestiae! Voluptates.</h3></p>
+                          <p><h3  class="tm-section tm-section-small">Experience the artistry of our Coffee Art creation—a masterpiece combining layers of rich espresso, velvety milk foam, and artistic latte designs. Our skilled baristas craft each cup as a work of art, using premium single-origin beans to deliver a sophisticated taste profile. Whether you're a coffee connoisseur or simply looking for that Instagram-worthy moment, our Coffee Art is the perfect choice for elevating your cafe experience.</h3></p>
 
 
                           <figure class="tm-special">
@@ -142,7 +143,7 @@
                               <span class="tm-item-price">$35</span>
                             </figcaption>
                           </figure>
-                          <p><h3  class="tm-section tm-section-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, ad quis totam laborum aperiam deserunt iure delectus architecto nobis officiis suscipit, natus recusandae et eveniet temporibus. Optio officiis numquam ipsam exercitationem ullam saepe provident inventore culpa, quisquam eligendi, odit eius fugiat impedit dolorem. Quasi earum maxime officia magni molestiae! Voluptates.</h3></p>
+                          <p><h3  class="tm-section tm-section-small">Discover tranquility in our Specialty Tea collection, a carefully curated selection of the finest teas from across the globe. From aromatic jasmine and delicate white teas to bold black teas and soothing herbal blends, each variety is chosen for its unique flavor profile and health benefits. Our tea experts have perfected the brewing technique to unlock the full potential of each leaf, ensuring a serene and rejuvenating tea experience in every cup.</h3></p>
                         </div>
                       </section>
 
@@ -233,8 +234,8 @@
                       saragota Cafe is a simple HTML website, coupled with css and javascript. i added animations using scroll and view to give it a kind of ux feeling, though not the best but i gained more insight on how to make use of animation timeline and javascript on scroll function.
                     </p>
                     <p class="tm-mb-0">
-                      i learnt how to make use of animation range both for entry and exit when you scroll into the desired width.
-                      i also learnt how to make use of scaling in animation: The higher the scale the more the image tends to grow on scroll, i implemented this into the intro image. i also  added shadow to the into image , change the background of the whole HTML ALSO.
+                      i  made use of animation range both for entry and exit when you scroll into the desired width.
+                      i also made use of scaling in animation: The higher the scale the more the image tends to grow on scroll, i implemented this into the intro image. i also  added shadow to the into image , change the background of the whole HTML ALSO.
                     </p>
                   </section>
                   <hr />
@@ -337,6 +338,28 @@
               </div>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script>
+      // Mobile menu toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileButton = document.querySelector('.mobile_button');
+        const navContainer = document.getElementById('navContainer');
+        const navLinks = document.querySelectorAll('.tm-nav-list a');
+        
+        if (mobileButton) {
+          mobileButton.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navContainer.classList.toggle('active');
+          });
+        }
+        
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            mobileButton.classList.remove('active');
+            navContainer.classList.remove('active');
+          });
+        });
+      });
+
       $(function() {
         // Adjust intro image height based on width.
         function adjustImageHeight() {

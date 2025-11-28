@@ -68,10 +68,15 @@
      // when do we use bracket notation: bracket notatation lets us use properties that normlly do not work with dot notation
     //    console.log(product_1.delivver-time);
     console.log(product_1['delivver-time'])//undefined because it is not in the object
-    //accessing value inside the inner object
+    //accessing value inside the inner object using multiple dots
     console.log(product_1.rating.count)
     product_1.fun()
    
+    console.log(JSON.stringify(product_1))//stringify is a method of the json object: so it is a function that is saved inside the json object, we can also call the function  inside the object to convert into json and if the object contains a function it gives a string as result because json does not support functins hence conversion is needed
+    const jsonString = JSON.stringify(product_1)
+   console.log( JSON.parse(jsonString))//converts to a javascript object
+
+
     </script>
 
    

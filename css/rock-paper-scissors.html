@@ -39,6 +39,9 @@
             losses:0,
             ties:0,   
         }
+        // for reset score we have to remove the score from local storage 
+        console.log(JSON.parse(localStorage.getItem('score')))//local storage.getITEM gets item gets a value out of local storage. score in this context have been previously converted to a json string and thus needs to b converted back into a object
+
         //getting computer move
         function getComputerMove() {
             const randomNumber = Math.random();
@@ -80,6 +83,9 @@
             
             }
            
+
+            localStorage.setItem('score',JSON.stringify ('score'))//local storage only supports strings
+          
             
             document.getElementById('result').textContent = result;
             alert(`Player: ${playerMove}, Computer: ${computerMove}`)
