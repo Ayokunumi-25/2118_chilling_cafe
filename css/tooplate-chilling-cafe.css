@@ -25,6 +25,8 @@ body {
   font-weight: 400;
   padding:20px;
   margin: 0;
+  
+  
 }
 .tm-nav{
   text-align:center;
@@ -205,7 +207,7 @@ body {
   background:rgba(0,0,0,0);
   box-shadow:inset 100px 50px 20px #000000, inset -150px -100px 250px #000000;
 
-}
+} 
 
 
 
@@ -245,6 +247,15 @@ body {
   transform: translateY(100%);
   transition: transform 0.6s ease-out;
   will-change: transform, opacity;
+}
+
+/* Center About section text */
+#about {
+  text-align: center;
+}
+
+#about p {
+  text-align: center;
 }
 
 .tm-section-header.header-visible,
@@ -305,20 +316,20 @@ tr:hover {
 /* Add responsive styles */
 @media (max-width: 600px) {
   .tm-responsive-table {
-    overflow-x: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    margin: 0 -15px;
-    padding: 0 15px;
+    margin: 0;
+    padding: 0 8px;
   }
 
-  table {
-    min-width: 500px;
+  @media (max-width: 418px) {
+    .tm-responsive-table::-webkit-scrollbar{ display: none; }
+    table { min-width: 0; font-size: 0.95rem; }
   }
 
-  th, td {
-    white-space: nowrap;
-    padding: 12px 10px;
-  }
+  table { min-width: 0; }
+
+  th, td { white-space: normal; padding: 10px 8px; }
 }
 
 /* Optional: Add animation for new rows */
@@ -434,6 +445,7 @@ figcaption span {
   display: flex;
   margin-left: -15px;
   margin-right: -15px;
+  flex-direction:row;
   
 }
 
@@ -823,8 +835,73 @@ a { transition: all 0.3s ease; }
     padding: 10px;
   }
   
-  .mobile_button {
-    display: flex;
+  .mobile_button { display: flex; }
+
+/* Small-screen safety overrides: prevent horizontal scrolling */
+@media (max-width: 418px) {
+  html, body { overflow-x: hidden; }
+
+  /* Force responsive tables to fit and wrap instead of creating a scrollbar */
+  .tm-responsive-table {
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
+  }
+
+  table {
+    min-width: 0 !important;
+    width: 100% !important;
+    table-layout: fixed !important;
+  }
+
+  th, td {
+    white-space: normal !important;
+    word-break: break-word !important;
+    font-size: 0.95rem !important;
+    padding: 8px 6px !important;
+  }
+
+  /* Remove negative outer margins that can cause overflow */
+  .tm-special-items, .tm-special, .tm-container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Constrain carousels/tracks so they don't overflow the page */
+  .carousel, .infinite-scroll, .infinite-track {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  img, .tm-intro-img, .infinite-item {
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Fix icon that was offset with large left margin */
+  #eathen {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+
+  /* Force page-level overflow hidden as a last resort */
+  html, body { overflow-x: hidden !important; position: relative; }
+
+  /* Override inline padding on intro span that can cause overflow */
+  .tm-intro-img span {
+    padding: 6px !important;
+    display: inline-block !important;
+    min-width: 0 !important;
+  }
+
+  /* reduce large icon padding on very small screens */
+  .tm-page-icon {
+    padding: 8px !important;
+  }
   }
   
   .nav-container {
@@ -1019,14 +1096,14 @@ a { transition: all 0.3s ease; }
     text-align: center;
   }
   
-  #scroll-to-top {
+  /* #scroll-to-top {
     width: 35px;
     height: 35px;
     font-size: 20px;
     line-height: 35px;
     bottom: 8px;
     right: 10px;
-  }
+  } */
   
   .carousel {
     margin: 40px auto;
@@ -1038,7 +1115,7 @@ a { transition: all 0.3s ease; }
     height: 3.5em;
     font-size: 1.8rem;
     padding: 0.6em;
-  }
+  }           
   
   .infinite-item {
     min-width: 140px;
@@ -1056,15 +1133,54 @@ a { transition: all 0.3s ease; }
     padding: 8px 6px;
     font-size: 0.7rem;
   }
-  
+
+
+  @media(max-width:418px){
   .tm-responsive-table {
-    overflow-x: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    margin: 0 -15px;
-    padding: 0 15px;
+    margin: 0;
+    padding: 0 8px;
   }
+}
 
   table {
-    min-width: 500px;
+    min-width:200px;
+    
+  }
+  .tm-container{
+    margin-top:100%;
+  }
+
+  .tm-intro-img{
+    
+    animation: tm-intro-img-animation linear;
+    animation-timeline:view();
+    animation-range:exit;
+    margin-top:-15%;
+    padding:30%;
+    margin-top:-30%;
+    object-fit: cover;
+
+    }
+   
+    
+
+
+
+
+
+.tm-intro-img::after{
+  content:'';
+  right:0;
+  left:0;
+  
+  width:50%;
+  height:5%;
+ 
+}
+ body {
+    font-size: 16px;
+    padding: 5px;
   }
 }

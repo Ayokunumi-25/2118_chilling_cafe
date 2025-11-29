@@ -30,18 +30,29 @@
     <button onclick="playGame('rock')">Rock</button>
     <button onclick="playGame('paper')">Paper</button>
     <button onclick="playGame('scissors')">Scissors</button>
-    
+    <button onclick="
+    localStorage.removeItem('score')//removing score from local storage the result gives us an error because we already rem. from local storage so its a null">reset score</button>
     <div id="result"></div>
 
     <script>
-        const score={
+        //changed the const to let
+        let score={
             wins: 0,
             losses:0,
             ties:0,   
         }
+
         // for reset score we have to remove the score from local storage 
         console.log(JSON.parse(localStorage.getItem('score')))//local storage.getITEM gets item gets a value out of local storage. score in this context have been previously converted to a json string and thus needs to b converted back into a object
-
+            //if(score===null)
+            if (!score){
+                score={
+                    wins:0,
+                    losses:0,
+                    ties:0,
+                    //remember that if we need to re assign a variable we have to change it from const to let
+                }
+            }
         //getting computer move
         function getComputerMove() {
             const randomNumber = Math.random();

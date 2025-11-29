@@ -10,14 +10,14 @@
     <link href="css/tooplate-chilling-cafe.css" rel="stylesheet" />
 
  <!-- LOADER (moved into <body>) -->
-
+   
   </head>
   <body>
     
         <!-- :begin cofee header logo -->
 
       <div class="tm-text-white tm-page-header-container">
-        <i class="fas fa-mug-hot fa-4x tm-page-icon" style="background-color: rgba(0, 0, 0, 0.4); border-radius: 50%; padding:30px;"></i>
+        <i class="fas fa-mug-hot fa-4x tm-page-icon" style="background-color:transparent; border-radius: 40%; padding:20px;"></i>
         <h1 class="tm-page-header">Saragota <span style="background-color: #996633; border-radius:10px 200px 10px 200px ;padding:10px;">Cafe</span></h1>
       </div>
       <!-- sidebar -->
@@ -49,7 +49,7 @@
        <div  class="tm-intro-img" id="top">
           <div>
           
-              <span style="background:#996633; border-radius:5px 200px 5px 200px; display:flex;  padding:50px;"></span>
+
             
           </div>
         </div>    
@@ -288,11 +288,11 @@
                    
                    <div aria-hidden class="group">
                       <div class="card">Cafe</div>
-                      <div class="card">2</div>
-                      <div class="card">3</div>
-                      <div class="card">4</div>
-                      <div class="card">5</div>
-                      <div class="card">6</div>
+                      <div class="card"></div>
+                      <div class="card"></div>
+                      <div class="card"></div>
+                      <div class="card"></div>
+                      <div class="card"></div>
                     </div>
                   </div>
 
@@ -308,8 +308,15 @@
                         </a>
                       </div>
                       <div class="tm-social-link-container">
-                        <a href="https://twitter.com" class="tm-social-link">
-                          <i class="fab fa-twitter"></i>
+                        <a href="https://twitter.com" class="tm-social-link" aria-label="Twitter (X)">
+                          <!-- Inline SVG: current Twitter (X) style mark -->
+                          <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
+                            <title>Twitter / X</title>
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                              <path d="M4 4l16 16" />
+                              <path d="M20 4L4 20" />
+                            </g>
+                          </svg>
                         </a>
                       </div>
                       <div class="tm-social-link-container">
@@ -326,7 +333,7 @@
                   </section>
                 </div>
                 
-                <div id="scroll-to-top" >
+                <!-- <div id="scroll-to-top" >
                   <i class="fa fa-angle-up"></i>
                 </div>
                 <footer>
@@ -335,7 +342,7 @@
                     . Design:         <a href="https://www.tooplate.com" class="tm-footer-link">The iyi</a>
                   </p>
                 </footer>
-              </div>
+              </div> -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script>
       // Mobile menu toggle
